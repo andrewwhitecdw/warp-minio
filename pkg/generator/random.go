@@ -128,7 +128,7 @@ func newRandom(o Options) (Source, error) {
 		size = int(o.totalSize)
 	}
 	if size <= 0 {
-		return nil, fmt.Errorf("size must be >= 0, got %d", size)
+		return nil, fmt.Errorf("size must be > 0, got %d", size)
 	}
 
 	input, err := rng.NewReader(rng.WithRNG(rand.New(rndSrc)), rng.WithSize(o.totalSize))
