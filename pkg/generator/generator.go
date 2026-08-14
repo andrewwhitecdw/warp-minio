@@ -182,7 +182,7 @@ func GetExpRandSize(rng *rand.Rand, minSize, maxSize int64) int64 {
 	}
 	logSizeMaxSize := math.Log2(float64(maxSize - 1))
 	logSizeMinSize := math.Max(7, logSizeMaxSize-8)
-	if minSize > 0 {
+	if minSize > 1 {
 		logSizeMinSize = math.Log2(float64(minSize - 1))
 	}
 	lsDelta := logSizeMaxSize - logSizeMinSize
