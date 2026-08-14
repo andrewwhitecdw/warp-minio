@@ -106,7 +106,7 @@ func WithSize(n int64) Option {
 		if n <= 0 {
 			return errors.New("WithSize: size must be > 0")
 		}
-		if o.randSize && o.totalSize < 256 {
+		if o.randSize && n < 256 {
 			return errors.New("WithSize: random sized objects should be at least 256 bytes")
 		}
 
