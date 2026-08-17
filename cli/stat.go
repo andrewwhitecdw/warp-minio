@@ -70,7 +70,7 @@ FLAGS:
   {{end}}`,
 }
 
-// mainDelete is the entry point for get command.
+// mainStat is the entry point for stat command.
 func mainStat(ctx *cli.Context) error {
 	checkStatSyntax(ctx)
 	sse := newSSE(ctx)
