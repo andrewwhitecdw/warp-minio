@@ -95,6 +95,7 @@ func newGenSource(ctx *cli.Context, sizeField string) func() generator.Source {
 			fatalIf(probe.NewError(err), "Invalid histogram format for the size parameter")
 		} else {
 			opts = append(opts, generator.WithSizeHistograms(ctx.String(sizeField)))
+			opts = append([]generator.Option{g.Apply()}, append(opts, generator.WithRandomSize(ctx.Bool("obj.randsize")))...)
 		}
 	} else {
 		tokens := strings.Split(ctx.String(sizeField), ",")
