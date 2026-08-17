@@ -95,7 +95,7 @@ func checkDeleteSyntax(ctx *cli.Context) {
 	checkAnalyze(ctx)
 	checkBenchmark(ctx)
 	if ctx.Int("batch") < 1 {
-		console.Fatal("batch size much be 1 or bigger")
+		console.Fatal("batch size must be 1 or bigger")
 	}
 	if !ctx.Bool("list-existing") {
 		wantO := ctx.Int("batch") * ctx.Int("concurrent") * 4
