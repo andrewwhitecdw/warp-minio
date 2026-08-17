@@ -138,10 +138,7 @@ func WithCustomPrefixes(prefixes []string) Option {
 // WithPrefixSize sets prefix size.
 func WithPrefixSize(n int) Option {
 	return func(o *Options) error {
-		if n < 0 {
-			return errors.New("WithPrefixSize: size must be >= 0 and <= 16")
-		}
-		if n > 16 {
+		if n < 0 || n > 16 {
 			return errors.New("WithPrefixSize: size must be >= 0 and <= 16")
 		}
 		o.randomPrefix = n
