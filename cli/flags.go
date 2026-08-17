@@ -93,7 +93,7 @@ var profileFlags = []cli.Flag{
 	},
 	cli.BoolFlag{
 		Name:   "threads",
-		Usage:  "Write a threas create profile",
+		Usage:  "Write a threads create profile",
 		Hidden: true,
 	},
 	cli.BoolFlag{
