@@ -241,5 +241,7 @@ func (g *Stat) Start(ctx context.Context, wait chan struct{}) error {
 
 // Cleanup deletes everything uploaded to the bucket.
 func (g *Stat) Cleanup(ctx context.Context) {
-	g.deleteAllInBucket(ctx, g.objects.Prefixes()...)
+	if !g.ListExisting {
+		g.deleteAllInBucket(ctx, g.objects.Prefixes()...)
+	}
 }
