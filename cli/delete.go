@@ -70,7 +70,7 @@ FLAGS:
   {{end}}`,
 }
 
-// mainDelete is the entry point for get command.
+// mainDelete is the entry point for delete command.
 func mainDelete(ctx *cli.Context) error {
 	checkDeleteSyntax(ctx)
 
