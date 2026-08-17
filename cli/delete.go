@@ -100,7 +100,7 @@ func checkDeleteSyntax(ctx *cli.Context) {
 	if !ctx.Bool("list-existing") {
 		wantO := ctx.Int("batch") * ctx.Int("concurrent") * 4
 		if ctx.Int("objects") < wantO {
-			console.Fatalf("Too few objects: With current --batch  and --concurrent settings, at least %d objects should be used for a valid benchmark. Use --objects=%d", wantO, wantO)
+			console.Fatalf("Too few objects: With current --batch and --concurrent settings, at least %d objects should be used for a valid benchmark. Use --objects=%d", wantO, wantO)
 		}
 	}
 }
