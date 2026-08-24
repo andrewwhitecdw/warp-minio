@@ -209,9 +209,6 @@ func (c *Common) deleteAllInBucket(ctx context.Context, prefixes ...string) {
 		prefixes = []string{""}
 	}
 
-	doneCh := make(chan struct{})
-	defer close(doneCh)
-
 	cl, done := c.Client()
 	defer done()
 
