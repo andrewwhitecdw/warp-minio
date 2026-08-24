@@ -141,7 +141,7 @@ func commandLine(ctx *cli.Context) string {
 		case "access-key", "secret-key", "influxdb", "sts-web-token":
 			val = "*REDACTED*"
 		}
-		s += " --" + flag.GetName() + "=" + val
+		s += " --" + name + "=" + val
 	}
 	return s
 }
