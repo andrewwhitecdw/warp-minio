@@ -96,7 +96,10 @@ func checkStatSyntax(ctx *cli.Context) {
 	if ctx.Int("versions") < 1 {
 		console.Fatal("At least one version must be tested")
 	}
-	if ctx.Int("objects") < 1 {
+	if ctx.Int("objects") < 0 {
+		console.Fatal("Object count cannot be negative")
+	}
+	if ctx.Int("objects") < 1 && !ctx.Bool("list-existing") {
 		console.Fatal("At least one object must be tested")
 	}
 	checkAnalyze(ctx)
